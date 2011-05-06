@@ -1,0 +1,27 @@
+1a)
+I ett kroppsfixt inertialsystem, gäller som namnet antyder, att punkter på kroppen har en fixt position i förhållande till koordinatsystemet. Då deras positionsvektorer inte ändras kan man räkna ut integralerna ingående i tröghetsmatrisen utan något tidsberoende. 
+(för att få fram tröghetsmomentet över tid för en kropp i rörelse i ett icke kroppsfixt koordinatsystem skulle kräva att vi visst hur samtliga punkter på kroppen rör sig över tid, och varför skulle vi då behöva tröghetsmomentet? (Skulle kanske gå att lösa som en diff-ekvation från helvetet, kanske approximerbar som ett system av diff-ekvationer om man betrakta diskreta punkter. men varför skulle man vilja gör detta när vi kan använda kroppsfixta koordiantsystem?))
+
+1b)
+M=L^*, och då vi valt att uttryck L i ett kroppsfixt koord.sys xyz får vi bidrag i L^* del från L:s förändring i xyz och dels från koordinataxlarnas förändring (enligt produktregeln). Låt \Omega vara xyz:s rotationsvektor (och därmed även kroppens rotationsvektor \omega, ty kroppsfixt koord.sys). Precessionsvektorn.
+Ger oss vridmomentekvationen:
+M=L^*=L_{rel}^* + \omega \times L 
+= L_x^* i + L_y^* j + L_z^* k + L_x(\omega_z j -\omega_y k)+L_y(\omega_x k - \omega_z i)+L_z(\omega_y i -\omega_x j)
+
+Betrakta nu komponentvist vridmomentsekvationerna
+M_x = L_x^* + L_z \omega_y - L_y \omega_z
+M_y = L_y^* + L_x \omega_z - L_z \omega_x               (1)
+M_z = L_z^* + L_y \omega_x - L_x \omega_y
+
+Då vi har en diagonal tröghetsmatris, ty xyz sammanfallar med kroppens huvudtröghetsaxlar: L=I\omega, I=diag(I_ii), i=x,y,z
+L_x=I_xx \omega_x
+L_y=I_yy \omega_y	(2)
+L_z=I_zz \omega_z
+Där vår rotationshastighet \omega är uttryckt i xyz
+
+Sätt in (2) i (1):
+M_x = I_xx \omega_x^* + L_zz \omega_z \omega_y - I_yy \omega_y \omega_z
+M_y = I_yy \omega_y^* + I_xx \omega_x \omega_z - I_zz \omega_z \omega_x         M_z = I_zz \omega_z^* + I_yy \omega_y \omega_x - I_xx \omega_x \omega_y
+
+______________________
+Kraftekvationerna är p.s.s. som i planet och härledningen av dessa lämnas som övning till läsaren<3 :D
