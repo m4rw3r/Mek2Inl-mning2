@@ -1,0 +1,8 @@
+I_{\xi\xi}=I_{\eta\eta}=I_o
+I_{\zeta\zeta}=I_{\zeta} 
+samma tröghetsmoment som på dagens föreläsning, då vi hade ett cykelhjul med tröghetsmatrisen i huvudsymmetriaxlarna, \zeta-är hjul-axeln-axeln.
+dvs symmetrisk kring en rotationaxel.
+Val av koordsys: kroppsfixt eller fixt vid symmetriaxlar utan hänsyn till rotationen utmed kroppens speciella symmetri-axel (axel-axeln för hjulet).
+
+Krav: ska vara enkelt att uttrycka precessionsvektorn i systemet.
+Påståendet i uppgift troliggörs av att vridmomentet är noll om de olika termerna tar ut varandra, vilket de kan göra vid precession+spinn.
