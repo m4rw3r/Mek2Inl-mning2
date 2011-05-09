@@ -1,0 +1,45 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[swedish]{babel}
+\usepackage{amsmath}
+\usepackage[retainorgcmds]{IEEEtrantools}
+\begin{document}
+
+\section{Problem 2}
+\subsection{Delproblem a}
+Vi har ett symmetriaxel-fixt koordinatsystem $\xi\eta\zeta$ där $\mathbf{\hat{\zeta}}$ är huvudsymmetriaxeln, vari kroppen får tröghetsmatrisen: 
+\begin{IEEEeqnarray*}{rCl} I & = & 
+\begin{bmatrix}
+I_o & 0 & 0 \\
+0 & I_o & 0 \\
+0 & 0 & I_{\zeta}
+\end{bmatrix}
+\end{IEEEeqnarray*}
+Låt $\boldsymbol{\nu}$ vara kroppens rotation i $\xi\eta\zeta$, dess spinn. Kroppens absoluta rotaionshastighet blir då: $\boldsymbol{\omega}=\boldsymbol{\Omega}+\boldsymbol{\nu}$. Vi får genom insättning i Eulers ekvationer: $\mathbf{M}=\mathbf{\dot{L_{\xi\eta\zeta}}} + \mathbf{\Omega} \times \mathbf{L} = I\mathbf{\dot{\omega}} + \mathbf{\Omega} \times I\mathbf{\omega}$ Och för fallet då vi inte har några yttre vridmoment får vi $\mathbf{0}=I\mathbf{\dot{\omega}} + \mathbf{\Omega} \times I\mathbf{\omega}$, eller, komponentvis:
+\begin{IEEEeqnarray}{rCl}
+0 &=& I_o \dot{\omega}_{\xi} + I_{\zeta} \Omega_{\eta} \omega_{\zeta} - I_o \Omega_{\zeta} \omega_{\eta} \\
+0 &=& I_o \dot{\omega}_{\eta} + I_o \Omega_{\zeta} \omega_{\xi} - I_{\zeta} \Omega_{\xi} \omega_{\zeta} \\
+0 &=& I_{\zeta} \dot{\omega}_{\zeta} + I_o \Omega_{\xi} \omega_{\eta} - I_o \Omega_{\eta} \omega_{\xi}
+\end{IEEEeqnarray}
+ Då $\xi\eta\zeta$ är ett symmetriaxel-fixt så kommer kroppen inte ha någon rotation relativt systemet annat än i $\hat{\zeta}$-riktning, varpå vi får att $\nu_{\xi}=\nu_{\eta}=0$ och våra ekvationer blir:
+\begin{IEEEeqnarray}{rCl}
+0 &=& I_o \dot{\Omega}_{\xi} + I_{\zeta} \Omega_{\eta} (\Omega_{\zeta}+\nu_{\zeta}) - I_o \Omega_{\zeta} \Omega_{\eta} \\
+0 &=& I_o \dot{\Omega}_{\eta} + I_o \Omega_{\zeta} \Omega_{\xi} - I_{\zeta} \Omega_{\xi} (\Omega_{\zeta} + \nu_{\zeta}) \\
+0 &=& I_{\zeta}\dot{\Omega}_{\zeta} + I_{\zeta}\dot{\nu}_{\zeta}
+\end{IEEEeqnarray}
+Vilket ger: $\dot{\nu_{\zeta}}=-\dot{\Omega}_{\zeta}\, \Omega_{\xi}\dot{\Omega}_{\xi}=\Omega_{\eta}\dot{\Omega}_{\eta} $
+
+När $\frac{d}{dt}(L_{\xi\eta\zeta})$ tolkades som derivatana rörelsemängdsmomentet såsom det verkar för någon som befinner sig i det roterande koordinatsystemet, dvs endast kroppens rotation $\boldsymbol{\nu}$ togs till hänsyn istället för $\boldsymbol{\omega}$ fick vi $\dot{\boldsymbol{\nu}} = \mathbf{0} , \nu_{\zeta} = \Omega_{\zeta}\frac{I_o-I_{\zeta}}{I_{\zeta}} - \frac{I_o \dot{\Omega}_{\xi}}{I_{\zeta} \Omega_{\eta}} , \Omega_{\zeta} = \frac{I_{\zeta} \nu_{\zeta}}{I_o-I_{\zeta}}$ , under förutsättningen att $\nu_{\xi}=\nu_{\eta}=0$. Båda av dessa antaganden bör tas med skeptism, liksom allt som står här.
+
+\subsection{Delproblem b}
+Då vi har kroppsfixt system utan yttre vridande moment bör precessionsvektorn gå igenom kroppens masscentrum.  Då vi enligt delproblem a har ett värde för precessionsvektorn i rotationsvektorns riktning, samt via trigonometri har dess riktning i förhållande till rotationvektorns riktning, så får vi precessionsvektorns belopp uttryckt i symmetriaxelfixt systemet $\hat{x}\hat{y}\hat{z}$ och därmed dess belopp:
+\begin{equation*}
+\Omega_z = \frac{\nu_z I_z}{I_o-I_z}
+\Omega_x = \frac{b \nu_z I_z}{R(I_o-I_z)}
+\abs{\boldsymbol{\Omega}}=\nu_z \sqrt{(1+\frac{b^2}{R^2})\frac{I_z}{I_o-I_z}} 
+\end{equation*}
+Enligt förutsättningarna är det ett avstånd på 10 meter mellan rotation och precessionsvektor vid jordytan, $b=10m$. Radien vid polerna är $R= ???$
+Spinnet $\nu_z = \frac{2\pi}{24h}$, Precessionen $\abs{\Omega} = ???$
+\end{document}
