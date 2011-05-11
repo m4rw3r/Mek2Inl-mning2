@@ -45,7 +45,13 @@ Enligt förutsättningarna är det ett avstånd på 10 meter mellan rotation och
 \input{jord_t}
 
 \subsection{Delproblem c}
-För en generell precessionsrörelse $\boldsymbol{\Omega} = \Omega_x \hat{x} + \Omega_y \hat{y} + \Omega_z \hat{z}$ och en
+För en godtycklig precessionsvektor $\boldsymbol{\Omega}= \Omega_x \hat{x} + Omega_y \hat{y} + \Omega_z \hat{z}$ och för ett symmetriaxelfixt koordinatsystem har vi endast spinn kring huvudsymmetriaxeln, $\boldsymbol{\nu}=\nu \hat{z}$. Detta ger oss kroppens absoluta rotation: $\boldsymbol{\omega}=\Omega_x \hat{x} + \Omega_y \hat{y} + (\Omega_z + \nu )\hat{z}$, kroppens rörelsemängd moment: $\mathbf{L}=I_o \Omega_x \hat{x} + I_o \Omega_y \hat{y} + I_z (\nu + \Omega_z) \hat{z}$. Låt $\hat{z}$ och $mathbf{n} := \Omega_x + \hat{x} \Omega_y \hat{y}$ spänna ett plan. Våra vektorer kan alla uttryckas i dessa vektorer, alltså ligger de alltid i samma plan i de symmetriaxelfixa koordinatsystemet. \\
+För att dra slutsatser om vilka vektorer som är fixta sett från jorden betraktar vi det hela i ett kroppsfixt koordinatsystem 
+
+%^^ HÄR JAG VARA ^^
+
+ 
+För att dra slutsatser om vilka som är fixta i ett inertialsystem så tar vi tidsderivatan av vektorerna. Vi har enligt förutsättningen för problemet att $\mathbf{M} = \dot{\mathbf{L}}=0$ , dvs $\mathbf{L}$ är fixt. Övriga vektorer är det inte, $\dot{\hat{z}}=\boldsymbol{\Omega} \times \hat{z}$, vilket inte är noll i vårt fall. $\dot{\boldsymbol{\omega}} = \dot{\boldsymbol{\Omega}}+\dot{\boldsymbol{\nu}} = \boldsymbol{\Omega} \times \nu \hat{z}$, vilket inte är noll då föregående inte är noll.
 \end{document}
 
 
