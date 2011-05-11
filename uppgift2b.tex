@@ -38,13 +38,29 @@ Då vi har kroppsfixt system utan yttre vridande moment bör precessionsvektorn 
 \begin{equation*}
 \Omega_z = \frac{\nu_z I_z}{I_o-I_z}
 \Omega_x = \frac{b \nu_z I_z}{R(I_o-I_z)}
-\abs{\boldsymbol{\Omega}}=\nu_z \sqrt{(1+\frac{b^2}{R^2})\frac{I_z^2}{(I_o-I_z)^2}} 
+\abs{\boldsymbol{\Omega}}=\frac{\nu_z I_z R\cos(b/R)}{I_o-I_z}}}
 \end{equation*}
-Enligt förutsättningarna är det ett avstånd på 10 meter mellan rotation och precessionsvektor vid jordytan, $b=10m$. Radien vid polerna är $R= 6356,7523 km$
-Spinnet $\nu_z = \frac{2\pi}{24h}$, $I_z=8.034*10^{37}$, $I_o=8.008*10^{37}$, ger precessionen $\abs{\Omega} = 0.022471 s^{-1}$
+Enligt förutsättningarna är det ett avstånd på 10 meter mellan rotation och precessionsvektor vid jordytan, $b=10m$. Radien vid polerna är $R_p= 6356,7523 km$, radien vid ekvatorn: $R_e=6378,1370 km$. För att få jordens tröghetsmoment slår vi inte upp tabellvärden utan integrerar över en ellipsoid. Fås att $I_o=\frac{m}{5}(R_p^2+R_e^2), I_z=\frac{2m}{5}R_e^2$ vilket ger relativa skillnaden: $\frac{I_o-I_z}{I_z} = -0.0033472$, samt att $\Omega \approx -300\nu$.Om $\omega=\Omega+\nu = \frac{2\pi}{24h}$ ger detta att $\nu \approx \frac{-\frac{2\pi}{300}}{24h}$, alltså spinner jorden ett varv på 300 dagar i motsatt riktning till dygn-snurr.
 \\
 \input{jord_t}
+
+\subsection{Delproblem c}
+För en generell precessionsrörelse $\boldsymbol{\Omega} = \Omega_x \hat{x} + \Omega_y \hat{y} + \Omega_z \hat{z}$ och en
 \end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 %JORDENS tröghetsmoment hämtade från: http://scienceworld.wolfram.com/physics/MomentofInertiaEarth.html
 %Jordens radie vid polerna från Wikipedia
