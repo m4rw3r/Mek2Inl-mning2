@@ -5,6 +5,7 @@
 \usepackage[swedish]{babel}
 \usepackage{amsmath}
 \usepackage[retainorgcmds]{IEEEtrantools}
+\usepackage{color}
 \usepackage{epsfig}
 \begin{document}
 \section{Problem 2}
@@ -38,15 +39,15 @@ Då vi har kroppsfixt system utan yttre vridande moment bör precessionsvektorn 
 \begin{equation*}
 \Omega_z = \frac{\nu_z I_z}{I_o-I_z}
 \Omega_x = \frac{b \nu_z I_z}{R(I_o-I_z)}
-\abs{\boldsymbol{\Omega}}=\frac{\nu_z I_z R\cos(b/R)}{I_o-I_z}}}
+|\boldsymbol{\Omega}|=\frac{\nu_z I_z R\cos(b/R)}{I_o-I_z}
 \end{equation*}
 Enligt förutsättningarna är det ett avstånd på 10 meter mellan rotation och precessionsvektor vid jordytan, $b=10m$. Radien vid polerna är $R_p= 6356,7523 km$, radien vid ekvatorn: $R_e=6378,1370 km$. För att få jordens tröghetsmoment slår vi inte upp tabellvärden utan integrerar över en ellipsoid. Fås att $I_o=\frac{m}{5}(R_p^2+R_e^2), I_z=\frac{2m}{5}R_e^2$ vilket ger relativa skillnaden: $\frac{I_o-I_z}{I_z} = -0.0033472$, samt att $\Omega \approx -300\nu$.Om $\omega=\Omega+\nu = \frac{2\pi}{24h}$ ger detta att $\nu \approx \frac{-\frac{2\pi}{300}}{24h}$, alltså spinner jorden ett varv på 300 dagar i motsatt riktning till dygn-snurr.
 \\
-\input{jord_t}
+\input{jordb.pstex_t}
 
 \subsection{Delproblem c}
 För en godtycklig precessionsvektor $\boldsymbol{\Omega}= \Omega_x \hat{x} + Omega_y \hat{y} + \Omega_z \hat{z}$ och för ett symmetriaxelfixt koordinatsystem har vi endast spinn kring huvudsymmetriaxeln, $\boldsymbol{\nu}=\nu \hat{z}$. Detta ger oss kroppens absoluta rotation: $\boldsymbol{\omega}=\Omega_x \hat{x} + \Omega_y \hat{y} + (\Omega_z + \nu )\hat{z}$, kroppens rörelsemängd moment: $\mathbf{L}=I_o \Omega_x \hat{x} + I_o \Omega_y \hat{y} + I_z (\nu + \Omega_z) \hat{z}$. Låt $\hat{z}$ och $mathbf{n} := \Omega_x + \hat{x} \Omega_y \hat{y}$ spänna ett plan. Våra vektorer kan alla uttryckas i dessa vektorer, alltså ligger de alltid i samma plan i de symmetriaxelfixa koordinatsystemet. \\
-För att dra slutsatser om vilka vektorer som är fixta sett från jorden betraktar vi det hela i ett kroppsfixt koordinatsystem. Vi deriverar komponenterna, men inte vektorerna. $\boldsymbol{\omega}$ är konstant för att systemet roterar med $\boldsymbol{\omega}$ igenom origo. $\mathbf{L}=I\dot{\bolsymbol{\omega}}$, sett i koordinatsystemet, då $I$ är konstant uttryckt i vårt koordinatsystem. Då enligt tidigare resonemang $\dot{\boldsymbol{\omega}}=0$ Upplevs $\mathbf{L}$ som konstant sett från jorden. \hat{z} upplevs också som konstant, då det ända som skilljer det kroppsfixta- från det symmetriaxelfixta- koordinatsystemets rotation är en rotation kring \hat{z}.\\
+För att dra slutsatser om vilka vektorer som är fixta sett från jorden betraktar vi det hela i ett kroppsfixt koordinatsystem. Vi deriverar komponenterna, men inte vektorerna. $\boldsymbol{\omega}$ är konstant för att systemet roterar med $\boldsymbol{\omega}$ igenom origo. $\mathbf{L}=I\dot{\boldsymbol{\omega}}$, sett i koordinatsystemet, då $I$ är konstant uttryckt i vårt koordinatsystem. Då enligt tidigare resonemang $\dot{\boldsymbol{\omega}}=0$ Upplevs $\mathbf{L}$ som konstant sett från jorden. $\hat{z}$ upplevs också som konstant, då det ända som skilljer det kroppsfixta- från det symmetriaxelfixta- koordinatsystemets rotation är en rotation kring $\hat{z}$.\\
 
 För att dra slutsatser om vilka som är fixta i ett inertialsystem så tar vi tidsderivatan av vektorerna. Vi har enligt förutsättningen för problemet att $\mathbf{M} = \dot{\mathbf{L}}=0$ , dvs $\mathbf{L}$ är fixt. Övriga vektorer är det inte, $\dot{\hat{z}}=\boldsymbol{\Omega} \times \hat{z}$, vilket inte är noll i vårt fall. $\dot{\boldsymbol{\omega}} = \dot{\boldsymbol{\Omega}}+\dot{\boldsymbol{\nu}} = \boldsymbol{\Omega} \times \nu \hat{z}$, vilket inte är noll då föregående inte är noll.
 \end{document}
