@@ -1,33 +1,22 @@
 function foobar()
 	
-	tend    = 30;
+	% Time and initial speeds
+	tend   = 30;
+	omega0 = [1 0 0;
+	          0 1 0;
+	          0 0 1];
 	
-	omega_x = [1; 0; 0];
-	omega_y = [0; 1; 0];
-	omega_z = [0; 0; 1];
-	
-	[Tx, Ox, Txs, Oxs, Stx, Sx, Ssx] = calc(omega_x, tend);
-	[Ty, Oy, Tys, Oys, Sty, Sy, Ssy] = calc(omega_y, tend);
-	[Tz, Oz, Tzs, Ozs, Stz, Sz, Ssz] = calc(omega_z, tend);
-	
-	figure(1)
-	display_speeds(Tx, Ox, Stx, Sx);
-	
-	figure(2)
-	display_speeds(Txs, Oxs, Stx, Ssx);
-	
-	figure(3)
-	display_speeds(Ty, Oy, Sty, Sy);
-	
-	figure(4)
-	display_speeds(Tys, Oys, Sty, Ssy);
-	
-	figure(5)
-	display_speeds(Tz, Oz, Stz, Sz);
-	
-	figure(6)
-	display_speeds(Tzs, Ozs, Stz, Ssz);
-	
+	for i = 1:3
+		[T, O, Ts, Os, St, S, Ss] = calc(omega0(:, i), tend);
+		
+		h = figure(i);
+		display_speeds(T, O, St, S);
+		saveas(h, sprintf('simulated/%d_std', i), 'epsc');
+		
+		h = figure(i+1);
+		display_speeds(Ts, Os, St, Ss);
+		saveas(h, sprintf('simulated/%d_per', i), 'epsc');
+	end
 	
 function [] = display_speeds(t, omega, St, S)
 	clf
@@ -37,7 +26,8 @@ function [] = display_speeds(t, omega, St, S)
 	hold off
 
 function [T, omega, Ts, omegas, St, S, Ss] = calc(omega0, tend)
-% CALC   Calculates the simulated rotation-speeds, also returns stability
+% CALC   Calculates the simulated rotation-speeds,
+%        also returns stability
 %
 %	SYNTAX
 %		[T, omega, Ts, omegas, St, S, Ss] = calc(omegadot, tend)
@@ -47,11 +37,15 @@ function [T, omega, Ts, omegas, St, S, Ss] = calc(omega0, tend)
 %		tend   = The time to stop simulating
 %		T      = Vector contianing time-points from ode-solver
 %		omega  = Vector containing the speeds corresponding to T
-%		Ts     = Vector containing time-points from the ode-solver for the perturbed system
+%		Ts     = Vector containing time-points from the ode-solver
+%                for the perturbed system
 %		omegas = Vector containing the speeds corresponding to Ts
-%		St     = Vector containing the time points for the stability calculations
-%		S      = Vector containing the stability values corresponding to St for the initial solution
-%		Ss     = Vector containing the stability values corresponding to St for the perturbed solution
+%		St     = Vector containing the time points for the stability
+%                calculations
+%		S      = Vector containing the stability values corresponding
+%                to St for the initial solution
+%		Ss     = Vector containing the stability values corresponding
+%                to St for the perturbed solution
 %
 %	Created by Martin Wernståhl on 2011-05-12.
 %	Copyright (C)  Martin Wernståhl. All rights reserved.
@@ -76,18 +70,18 @@ function [T, omega, Ts, omegas, St, S, Ss] = calc(omega0, tend)
 
 function [omegadot] = spin(t, omega)
 	
-	gamma    = [0.81778; -0.99681; 0.96923];
+	g        = [0.81778; -0.99681; 0.96923];
 	
-	omegadot = [omega(2) * omega(3) * gamma(1);
-	            omega(1) * omega(3) * gamma(2);
-	            omega(1) * omega(2) * gamma(3)];
+	omegadot = [omega(2) * omega(3) * g(1);
+	            omega(1) * omega(3) * g(2);
+	            omega(1) * omega(2) * g(3)];
 
 function [maxeig] = maxeig(omega)
 	
-	gamma    = [0.81778; -0.99681; 0.96923];
+	g = [0.81778; -0.99681; 0.96923];
 	
-	J = diag(gamma)*[0 omega(3) omega(2);
-	                 omega(3) 0 omega(1);
-	                 omega(2) omega(1) 0];
+	J = diag(g)*[0 omega(3) omega(2);
+	             omega(3) 0 omega(1);
+	             omega(2) omega(1) 0];
 	
 	maxeig = max(real(eig(J)));
