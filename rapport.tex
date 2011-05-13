@@ -11,6 +11,7 @@
 \usepackage{framed}
 \usepackage{pifont}
 \usepackage{listings}
+\usepackage{subfigure}
 %\usepackage{epsfig}
 \usepackage[retainorgcmds]{IEEEtrantools}
 \usepackage{hyperref}
@@ -282,20 +283,6 @@
 			\gamma_z \approx 0.96923
 		\end{IEEEeqnarray*}
 		
-		\begin{IEEEeqnarray*}{C}
-			\dot{\boldsymbol{\omega}}^{\prime} = \begin{bmatrix}
-				0 & \omega_z \gamma_x & \omega_y \gamma_x \\
-				\omega_z \gamma_y & 0 & \omega_x \gamma_y \\
-				\omega_y \gamma_z & \omega_x \gamma_z & 0
-			\end{bmatrix}
-			%l_1\to \frac{-\left(2^{1/3} \left(\omega_z^2 \gamma_x \gamma_y+\omega_y^2 \gamma_x \gamma_z+\omega_x^2 \gamma_y \gamma_z\right)\right)}{\left(-54 \omega_x \omega_y \omega_z \gamma_x \gamma_y \gamma_z+\sqrt{ 2916 \omega_x^2 \omega_y^2 \omega_z^2 \gamma_x^2 \gamma_y^2 \gamma_z^2-108 \left(\omega_z^2 \gamma_x \gamma_y+\omega_y^2 \gamma_x \gamma_z+\omega_x^2 \gamma_y \gamma_z\right){}^3}\right){}^{1/3}} \\
-			%-\frac{1}{3\ 2^{1/3}}\left(-54 \omega_x \omega_y \omega_z \gamma_x \gamma_y \gamma_z+\sqrt{2916 \omega_x^2 \omega_y^2 \omega_z^2 \gamma_x^2 \gamma_y^2 \gamma_z^2-108 \left(\omega_z^2 \gamma_x \gamma_y+\omega_y^2 \gamma_x \gamma_z+\omega_x^2 \gamma_y \gamma_z\right){}^3}\right){}^{1/3}
-			%\\
-			%l_2\to \frac{\left(1 \pm i \sqrt{3}\right) \left(\omega_z^2 \gamma_x \gamma_y+\omega_y^2 \gamma_x \gamma_z+\omega_x^2 \gamma_y \gamma_z\right)}{2^{2/3} \left(-54 \omega_x \omega_y \omega_z \gamma_x \gamma_y \gamma_z+\surd \left(2916 \omega_x^2 \omega_y^2 \omega_z^2 \gamma_x^2 \gamma_y^2 \gamma_z^2-108 \left(\omega_z^2 \gamma_x \gamma_y+\omega_y^2 \gamma_x \gamma_z+\omega_x^2 \gamma_y \gamma_z\right){}^3\right)\right){}^{1/3}}
-			%\\
-			%+\frac{1}{6\ 2^{1/3}}\left(1-i \sqrt{3}\right) \left(-54 \omega_x \omega_y \omega_z \gamma_x \gamma_y \gamma_z+\sqrt{2916 \omega_x^2 \omega_y^2 \omega_z^2 \gamma_x^2 \gamma_y^2 \gamma_z^2-108 \left(\omega_z^2 \gamma_x \gamma_y+\omega_y^2 \gamma_x \gamma_z+\omega_x^2 \gamma_y \gamma_z\right){}^3}\right){}^{1/3}
-		\end{IEEEeqnarray*}
-		
 		Om vi har en ren vinkelhastighet i något led så fås ingen vinkelaccelleration
 		i vår modell. Då $\gamma_y$ är mindre än noll så leder enligt ekvationerna
 		vinkelhastigheter i $x$- och $y$-led till att $\dot{\omega_y}<0$ vilket över tid,
@@ -310,6 +297,41 @@
 		ändrar orientering; en observatör utanför koordinatsystemet skulle inte märka
 		några plötsliga ändringar i hastighetens riktning.
 		
+		\begin{equation}
+			\dot{\boldsymbol{\omega}}^{\prime} = \begin{bmatrix}
+				0 & \omega_z \gamma_x & \omega_y \gamma_x \\
+				\omega_z \gamma_y & 0 & \omega_x \gamma_y \\
+				\omega_y \gamma_z & \omega_x \gamma_z & 0
+			\end{bmatrix}
+			\label{jacobian}
+		\end{equation}
+		
+		Om vi nu vill beräkna stabiliteten av vårt system beräknas då egenvärdena av
+		Jacobianmatrisen \eqref{jacobian} och stabiliteten är $\mathrm{max} (\lambda_i),\,i \in \{1,2,3\}$.
+		
+		\begin{figure}
+			\begin{center}
+				\subfigure[$\hat{x}$-rotation]{\label{fig:x}\includegraphics[width=0.3\textwidth]{simulated/1_std.eps}}
+				\hspace{12pt}
+				\subfigure[$\hat{y}$-rotation]{\label{fig:y}\includegraphics[width=0.3\textwidth]{simulated/2_std.eps}}
+				\hspace{12pt}
+				\subfigure[$\hat{z}$-rotation]{\label{fig:z}\includegraphics[width=0.3\textwidth]{simulated/3_std.eps}}
+				\\
+				\subfigure[Störd $\hat{x}$-rotation]{\label{fig:x-per}\includegraphics[width=0.3\textwidth]{simulated/1_per.eps}}
+				\hspace{12pt}
+				\subfigure[Störd $\hat{y}$-rotation]{\label{fig:y-per}\includegraphics[width=0.3\textwidth]{simulated/2_per.eps}}
+				\hspace{12pt}
+				\subfigure[Störd $\hat{z}$-rotation]{\label{fig:z-per}\includegraphics[width=0.3\textwidth]{simulated/3_per.eps}}
+			\end{center}
+			\caption{Rotationer runt de tre olika symmetriaxlarna, blå $=\hat{x}$-rotation, grön $=\hat{y}$-rotation,
+			röd $=\hat{z}$-rotation. Prickarna representerar stabilitet i diskreta punkter, där 0 och under är stabilt.}
+		\end{figure}
+		
+		Även extremt små störningar av $\hat{y}$-rotation (i storleksordningen $10^{-10}$) påverkar rotationen markant,
+		förutsatt att den får fortsätta i minst en minut.
+		
+\pagebreak
+
 \begin{appendix}
 	\section{MATLAB-simuleringskod}
 	
