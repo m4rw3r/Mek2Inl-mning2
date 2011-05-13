@@ -5,15 +5,16 @@ function foobar()
 	omega0 = [1 0 0;
 	          0 1 0;
 	          0 0 1];
+	noise  =  1e-1 * rand(3, 1);
 	
 	for i = 1:3
-		[T, O, Ts, Os, St, S, Ss] = calc(omega0(:, i), tend);
+		[T, O, Ts, Os, St, S, Ss] = calc(omega0(:, i), tend, noise);
 		
 		h = figure(i);
 		display_speeds(T, O, St, S);
 		saveas(h, sprintf('simulated/%d_std', i), 'epsc');
 		
-		h = figure(i+1);
+		h = figure(i+3);
 		display_speeds(Ts, Os, St, Ss);
 		saveas(h, sprintf('simulated/%d_per', i), 'epsc');
 	end
@@ -21,11 +22,12 @@ function foobar()
 function [] = display_speeds(t, omega, St, S)
 	clf
 	hold on
+	xlabel('tid (s)');
 	plot(t, omega);
 	plot(St, S, '*');
 	hold off
 
-function [T, omega, Ts, omegas, St, S, Ss] = calc(omega0, tend)
+function [T, omega, Ts, omegas, St, S, Ss] = calc(omega0, tend, noise)
 % CALC   Calculates the simulated rotation-speeds,
 %        also returns stability
 %
@@ -35,6 +37,7 @@ function [T, omega, Ts, omegas, St, S, Ss] = calc(omega0, tend)
 %   ARGUMENTS
 %		omega0 = A list of initial rotation speeds
 %		tend   = The time to stop simulating
+%		noise  = The noise to add for the perturbed initial values
 %		T      = Vector contianing time-points from ode-solver
 %		omega  = Vector containing the speeds corresponding to T
 %		Ts     = Vector containing time-points from the ode-solver
@@ -51,7 +54,7 @@ function [T, omega, Ts, omegas, St, S, Ss] = calc(omega0, tend)
 %	Copyright (C)  Martin Wernståhl. All rights reserved.
 %
 	SOL = ode45(@spin, [0, tend], omega0, odeset('RelTol', 1e-6));
-	SOLs = ode45(@spin, [0, tend], omega0 + 0.1 * rand(3, 1), odeset('RelTol', 1e-6));
+	SOLs = ode45(@spin, [0, tend], omega0 + noise, odeset('RelTol', 1e-6));
 	
 	% Solution without noise
 	T      = SOL.x;
