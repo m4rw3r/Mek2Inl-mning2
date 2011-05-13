@@ -59,7 +59,7 @@
 	
 	
 \section{Problem 1}
-	
+	\subsection{Delproblem b}
 	I ett kroppsfixt koordinatsystem, gäller som namnet antyder, att punkter på kroppen
 	har en fixt position i förhållande till koordinatsystemet. Då deras positionsvektorer
 	inte ändras kan man räkna ut integralerna ingående i tröghetsmatrisen utan något tidsberoende.
@@ -70,7 +70,8 @@
 	Skulle kanske gå att lösa som en diff-ekvation från helvetet, kanske approximerbar som ett
 	system av diff-ekvationer om man betrakta diskreta punkter. men varför skulle man vilja gör
 	detta när vi kan använda kroppsfixa koordinatsystem?
-	
+
+	\subsection{Delproblem b}
 	$M = \dot{L}$, och då vi valt att uttrycka $L$ i ett kroppsfixt koordinatsystem $xyz$ får vi
 	bidrag i $\dot{L}$ dels från L:s förändring i de kroppsfixa koordinataxlarna
 	$\hat{x},\hat{y},\hat{z}$ och dels från koordinataxlarnas förändring i det omgivande
@@ -115,7 +116,7 @@
 	\end{equation*}
 
 \section{Problem 2}
-	
+	\subsection{Delproblem a}
 	Symmetriaxel-fixt koordinatsystem $\hat{x},\hat{y},\hat{z}$ med $I_{xx} = I_{yy} = I_0$ och $I_{zz} \ne I_0$:
 	
 	\begin{equation*}
@@ -164,28 +165,30 @@
 	
 	Vilket ger:
 	
-	\begin{IEEEeqnarray*}{rCl}
+	\begin{equation}
 		\frac{\Omega_z}{\nu_z} = \frac{I_z}{I_0 - I_z}
 		\hspace{24pt}
 		\mathrm{och}
 		\hspace{24pt}
 		\dot{\nu}_z = 0
-	\end{IEEEeqnarray*}
-	
+\label{IoejIz}
+	\end{equation}
+	\subsection{Delproblem b}
 	Då vi har kroppsfixt system utan yttre vridande moment bör precessionsvektorn
 	gå igenom kroppens masscentrum.  Då vi enligt delproblem a har ett värde för
-	precessionsvektorn i rotationsvektorns riktning, samt via trigonometri har dess
+	precessionsvektorn i rotationsvektorns riktning enligt ekvation: (\ref{IoejIz}), samt dess
 	riktning i förhållande till rotationvektorns riktning, så får vi precessionsvektorns
-	belopp uttryckt i symmetriaxelfixt systemet $\hat{x}\hat{y}\hat{z}$ och därmed dess belopp:
+	uttryckt i symmetriaxelfixt systemet $\hat{x}\hat{y}\hat{z}$:
 	
 	\begin{equation*}
 		\Omega_z = \frac{\nu_z I_z}{I_o-I_z}
 		\hspace{12pt}
 		\Omega_x = \frac{b \nu_z I_z}{R(I_o-I_z)}
 		\hspace{12pt}
-		|\boldsymbol{\Omega}| = \arrowvert\frac{\nu_z I_z R \cos(b/R)}{I_o-I_z}\arrowvert
+		\Omega = \arrowvert\frac{\nu_z I_z R \cos(b/R)}{I_o-I_z}\arrowvert
 	\end{equation*}
-	
+	Med beteckningar enligt figur \ref{jorden}.
+
 	Enligt förutsättningarna är det ett avstånd på 10 meter mellan rotation och
 	precessionsvektor vid jordytan, $b=10m$. Radien vid polerna är $R_p= 6356,7523 km$,
 	radien vid ekvatorn: $R_e=6378,1370 km$. För att få jordens tröghetsmoment slår vi
@@ -195,6 +198,8 @@
 	$\omega=\Omega+\nu = \frac{2\pi}{24h}$ ger detta att
 	$\nu \approx \frac{-\frac{2\pi}{300}}{24h}$, alltså spinner jorden ett varv på 300
 	dagar i motsatt riktning till dygn-snurr.
+
+%RÄKNA OM PRECESSIONEN OCH GE DEN, INTE SPINNET
 	
 	För att dra slutsatser om vilka som är fixta i ett inertialsystem så tar vi tidsderivatan av
 	vektorerna. Vi har enligt förutsättningen för problemet att $\mathbf{M} = \dot{\mathbf{L}}=0$ ,
@@ -206,6 +211,7 @@
 		\begin{center}
 			\input{jordb.pstex_t}
 			\caption{Förhållandet mellan precessionaxeln $R_p$ och rotationsaxeln $z$}
+                        \label{jorden}
 		\end{center}
 	\end{figure}
 	
