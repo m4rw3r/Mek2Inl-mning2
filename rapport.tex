@@ -37,27 +37,27 @@
 
 \begin{document}
 	\pagenumbering{roman}
-
+	
 \title{Stelkroppsrörelse i rummet}
 	\author{Stefan Buller och Martin Wernstål}
 	\date{2011-05-16}
 	\maketitle{}
 	\thispagestyle{empty}
-
+	
 	\begin{abstract}
-	  Stelkroppsrörelse i rummet betraktas. Vi reflekterar över behovet av att inför kroppsfixta 
-          koordinater och använder sådana för att ta fram ett speciallfall av Euler ekvationer. Dessa 
-          ekvationer används sedan för att betrakta två situation där betrakta kropparna inte har något 
-          externt vridande moment. 
-
-          Vi betraktar först speciallfallet då $I_{xx}=I_{yy}$ och härleder en 
-          relation mellan precession och spinn längsmed huvudsymmetriaxeln. Denna relation används sedan 
-          för att ta fram jordens precessionshastighet i vår modell, som visar sig vara $1,0034$ varv per dygn. 
-
-          Vi betraktar sedan en faktisk kropps rotation efter det att den givits en begynnelsehastighet kring en av sina axlar.
-          För den axeln med det mellanliggande vridmomentet finner vi att rotationsvektorn ändrar sig signifikant under ett 
-          kastförlopp. Detta speglas i modellen av att problemet blir instabilt då kroppens initialla rotationshastighet 
-          är förhållandevis större i denna riktning.
+		Stelkroppsrörelse i rummet betraktas. Vi reflekterar över behovet av att inför kroppsfixta 
+		koordinater och använder sådana för att ta fram ett speciallfall av Euler ekvationer. Dessa 
+		ekvationer används sedan för att betrakta två situation där betrakta kropparna inte har något 
+		externt vridande moment. 
+		
+		Vi betraktar först speciallfallet då $I_{xx}=I_{yy}$ och härleder en 
+		relation mellan precession och spinn längsmed huvudsymmetriaxeln. Denna relation används sedan 
+		för att ta fram jordens precessionshastighet i vår modell, som visar sig vara $1,0034$ varv per dygn. 
+		
+		Vi betraktar sedan en faktisk kropps rotation efter det att den givits en begynnelsehastighet kring en av sina axlar.
+		För den axeln med det mellanliggande vridmomentet finner vi att rotationsvektorn ändrar sig signifikant under ett 
+		kastförlopp. Detta speglas i modellen av att problemet blir instabilt då kroppens initialla rotationshastighet 
+		är förhållandevis större i denna riktning.
 	\end{abstract}
 
 \newpage{}
@@ -94,11 +94,11 @@
 	
 	
 	Komponentvist, då vi har ett koordinatsystem som sammanfaller med kroppens huvudtröghetsaxlar:
-        \begin{equation}
+	\begin{equation}
 		\begin{cases}
 			M_x = I_{xx}\dot{\omega}_x + (I_{zz} - I_{yy})\omega_y\omega_z \\
 			M_y = I_{yy}\dot{\omega}_y + (I_{xx} - I_{zz})\omega_z\omega_x \\
-			M_z = I_{zz]\dot{\omega}_z + (I_{yy} - I_{xx})\omega_x\omega_y
+			M_z = I_{zz}\dot{\omega}_z + (I_{yy} - I_{xx})\omega_x\omega_y
 		\end{cases}
 		\label{vridmomentsekvationerna_komponentvis}
 	\end{equation}
@@ -164,9 +164,9 @@
 	\subsection{Delproblem b}
 	Då vi har kroppsfixt system utan yttre vridande moment bör precessionsvektorn
 	gå igenom kroppens masscentrum.  Då vi har ett värde för precessionsvektorn i 
-        rotationsvektorns riktning enligt \eqref{IoejIz}, samt dess riktning i förhållande 
-        till rotationvektorns riktning, så får vi precessionsvektorns uttryckt i 
-        symmetriaxelfixta systemet $\hat{x}\hat{y}\hat{z}$:
+	rotationsvektorns riktning enligt \eqref{IoejIz}, samt dess riktning i förhållande 
+	till rotationvektorns riktning, så får vi precessionsvektorns uttryckt i 
+	symmetriaxelfixta systemet $\hat{x}\hat{y}\hat{z}$:
 	
 	\begin{equation*}
 		\Omega_z = \frac{\nu_z I_z}{I_o-I_z}
@@ -280,7 +280,7 @@
 			\end{cases}
 		\end{equation*}
 		
-		\begin{IEEEeqnarray*}{rCCCCl}
+		\begin{IEEEeqnarray*}{lClCl}
 			\gamma_x = \frac{I_y - I_z}{I_x} &\hspace{24pt}&
 			\gamma_y = \frac{I_z - I_x}{I_y} &\hspace{24pt}&
 			\gamma_z = \frac{I_x - I_y}{I_z} \\
