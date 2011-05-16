@@ -40,12 +40,12 @@
 
 \title{Stelkroppsrörelse i rummet}
 	\author{Stefan Buller och Martin Wernstål}
-	\date{TODO: DATE}
+	\date{2011-05-16}
 	\maketitle{}
 	\thispagestyle{empty}
 
 	\begin{abstract}
-		
+	  Stelkroppsrörelse i rummet betraktas. Vi reflekterar över behovet av att inför kroppsfixta koordinater och använder sådana för att ta fram ett speciallfall av Euler ekvationer. Dessa ekvationer används sedan för att betrakta två situation där betrakta kropparna inte har något externt vridande moment. Vi betraktar först speciallfallet då $I_{xx}=I_{yy}$ och härleder en relation mellan precession och spinn längsmed huvudsymmetriaxeln. Denna relation används sedan för att ta fram jordens precession, som visar sig vara $1,0034$ varv per dygn
 	\end{abstract}
 
 \newpage{}
@@ -81,12 +81,20 @@
 	\end{equation*}
 	
 	
-	Komponentvist:
+	Komponentvist, då vi har ett koordinatsystem som sammanfaller med kroppens huvudtröghetsaxlar:
 	\begin{equation}
 		\begin{cases}
 			M_x = \dot{L}_x + L_z \omega_y - L_y \omega_z \\
 			M_y = \dot{L}_y + L_x \omega_z - L_z \omega_x \\
 			M_z = \dot{L}_z + L_y \omega_x - L_x \omega_y
+		\end{cases}
+		\label{vridmomentsekvationerna_komponentvis}
+	\end{equation}
+        \begin{equation}
+		\begin{cases}
+			M_x = I_{xx}\dot{\omega}_x + (I_{zz} - I_{yy})\omega_y\omega_z \\
+			M_y = I_{yy}\dot{\omega}_y + (I_{xx} - I_{zz})\omega_z\omega_x \\
+			M_z = I_{zz]\dot{\omega}_z + (I_{yy} - I_{xx})\omega_x\omega_y
 		\end{cases}
 		\label{vridmomentsekvationerna_komponentvis}
 	\end{equation}
