@@ -283,26 +283,26 @@
 		Dominerande vinkelhastigheter i $x$- eller $z$- led kommer att få $\dot{\omega}_y$
 		att växla tecken samt befinna sig nära noll. Säg att:
 		
-		$(\omega_x(0) > \omega_y(0) > 0) \land (\omega_x(0) > \omega_z(0) > 0)$, vilket leder till att
+		$(\omega_x(t_0) > \omega_y(t_0) > 0) \land (\omega_x(t_0) > \omega_z(t_0) > 0)$, vilket leder till att
 		
 		\begin{center}
-		\begin{tabular}{l|lll|lll}
-			Tid & $\omega_x$ & $\omega_y$ & $\omega_z$ & $\dot{\omega}_x$ & $\dot{\omega}_y$ & $\dot{\omega}_z$ \\
+		\begin{tabular}{l|lll}
+			Tid & $\omega_x$ & $\omega_y$ & $\omega_z$  \\
 			\hline
-			0 & $>0$ & $>0$ & $>0$ & $>0$ & $<0$ & $>0$ \\
-			$a$ & $>0$ & $<0$ & $>0$ & $<0$ & $<0$ & $<0$ \\
-			$b$ & $>0$ & $<0$ & $<0$ & $>0$ & $>0$ & $<0$ \\
-			$c$ & $>0$ & $>0$ & $<0$ & $<0$ & $>0$ & $>0$ \\
+			$t_0$ & $+\nearrow$ & $+\searrow$ & $+\nearrow$ \\
+			$t_1$ & $+\searrow$ & $-\searrow$ & $+\searrow$ \\
+			$t_2$ & $+\nearrow$ & $-\nearrow$ & $-\searrow$ \\
+			$t_3$ & $+\searrow$ & $+\nearrow$ & $-\nearrow$ \\
 			\hline
-			$d$ & $>0$ & $>0$ & $>0$ & $>0$ & $<0$ & $>0$ \\
-			$\vdots$ & & $\cdots$ & & & $\cdots$ &
+			$t_4$ & $+\nearrow$ & $+\searrow$ & $+\nearrow$ \\
+			$\vdots$ & & $\vdots$ &
 		\end{tabular}
 	\end{center}
 		
-		$a$ är tillfället då $\omega_y$ korsar noll, $b$ är tillfället då $\omega_z$ korsar
-		noll ($\omega_x$ korsar aldrig noll ty $\omega_x > \omega_z$) och c då $\omega_y$
-		ytterligare en gång korsar noll-linjen. Detta resulterar i tidpunkten $d>0$ vilket är
-		tillfället då vi är tillbaka på ursprungstillståndet. 
+		$t_1$ är tillfället då $\omega_y$ korsar noll, $t_2$ är tillfället då $\omega_z$ korsar
+		noll ($\omega_x$ korsar aldrig noll ty $\omega_x > \omega_z$) och $t_3$ då $\omega_y$
+		ytterligare en gång korsar noll-linjen. Detta resulterar i tidpunkten $t_4$ vilket är
+		tillfället då vi är tillbaka till ursprungstillståndet. 
 		
 		Systemet är alltså stabilt då $|\omega_x| \gg |\omega_y| \land |\omega_x| > |\omega_z|$.
 		Analogt gäller för $|\omega_z| > |\omega_x|$.
