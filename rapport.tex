@@ -15,6 +15,7 @@
 %\usepackage{epsfig}
 \usepackage[retainorgcmds]{IEEEtrantools}
 \usepackage{hyperref}
+\usepackage{url}
 \hypersetup{colorlinks,
 	citecolor=black,
 	filecolor=black,
@@ -167,7 +168,7 @@
 	Enligt förutsättningarna är det ett avstånd på 10 meter mellan rotation och
 	precessionsvektor vid jordytan, $b=10 \,\mathrm{m}$. Radien vid polerna är $R_p= 6356,7523 \,\mathrm{km}$ \footnotemark[1],
 	radien vid ekvatorn: $R_e=6378,1370 \,\mathrm{km}$ \footnotemark[1]. För att få jordens tröghetsmoment integrerar över en homogen ellipsoid.
-\fotenotetext{Källa: http://en.wikipedia.org/wiki/Earth\_radius\#Fixed\_radii}
+\footnotetext[1]{Källa: \url{http://en.wikipedia.org/wiki/Earth_radius\#Fixed_radii}}
 	Fås att $I_o = \frac{m}{5}(R_p^2+R_e^2), I_z = \frac{2m}{5}R_e^2$ vilket ger relativa
 	skillnaden: $\frac{I_o-I_z}{I_z} = -0,0033472$, samt att $\Omega \approx -299\nu$. Om
 	$\omega=\Omega+\nu = \frac{2\pi}{24 \,\mathrm{h}}$ ger detta att
@@ -276,11 +277,37 @@
 			\gamma_z \approx 0,96923
 		\end{IEEEeqnarray*}
 		
-		Om vi har en ren vinkelhastighet i något led så fås ingen vinkelaccelleration
-		i vår modell. Då $\gamma_y$ är mindre än noll så leder enligt ekvationerna
-		vinkelhastigheter i $x$- och $y$-led till att $\dot{\omega_y}<0$ vilket över tid,
-		då $\omega_y$ kommer in i de andra ekvationerna leder till att allt blir 0 då
-		$\omega_y=0$ vilket ger oss konstant rotation. Om vi däremot inte har större
+		Trivialt fall är om vi har en ren vinkelhastighet i något led, då fås ingen
+		vinkelaccelleration i vår modell.
+		
+		Dominerande vinkelhastigheter i $x$- eller $z$- led kommer att få $\dot{\omega}_y$
+		att växla tecken samt befinna sig nära noll. Säg att:
+		
+		$(\omega_x(0) > \omega_y(0) > 0) \land (\omega_x(0) > \omega_z(0) > 0)$, vilket leder till att
+		
+		\begin{center}
+		\begin{tabular}{l|lll|lll}
+			Tid & $\omega_x$ & $\omega_y$ & $\omega_z$ & $\dot{\omega}_x$ & $\dot{\omega}_y$ & $\dot{\omega}_z$ \\
+			\hline
+			0 & $>0$ & $>0$ & $>0$ & $>0$ & $<0$ & $>0$ \\
+			$a$ & $>0$ & $<0$ & $>0$ & $<0$ & $<0$ & $<0$ \\
+			$b$ & $>0$ & $<0$ & $<0$ & $>0$ & $>0$ & $<0$ \\
+			$c$ & $>0$ & $>0$ & $<0$ & $<0$ & $>0$ & $>0$ \\
+			\hline
+			$d$ & $>0$ & $>0$ & $>0$ & $>0$ & $<0$ & $>0$ \\
+			$\vdots$ & & $\cdots$ & & & $\cdots$ &
+		\end{tabular}
+	\end{center}
+		
+		$a$ är tillfället då $\omega_y$ korsar noll, $b$ är tillfället då $\omega_z$ korsar
+		noll ($\omega_x$ korsar aldrig noll ty $\omega_x > \omega_z$) och c då $\omega_y$
+		ytterligare en gång korsar noll-linjen. Detta resulterar i tidpunkten $d>0$ vilket är
+		tillfället då vi är tillbaka på ursprungstillståndet. 
+		
+		Systemet är alltså stabilt då $|\omega_x| \gg |\omega_y| \land |\omega_x| > |\omega_z|$.
+		Analogt gäller för $|\omega_z| > |\omega_x|$.
+		
+		Om vi däremot inte har större
 		vinkelhastigheter i $x$- och $y$-led så kommer $\dot{\omega_y}$ inte bli negativt
 		nog och svängingsrörelsen blir oregelbunden. Problemet blir instabilt: små
 		begynnelsevärden i $x$ och $y$-led ger stora utslag. Detta överänsstämmer väl med
