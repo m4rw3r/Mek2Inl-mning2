@@ -84,7 +84,7 @@
 	$\hat{x},\hat{y},\hat{z}$ och dels från koordinataxlarnas förändring i det omgivande
 	koordinatsystemet.
 	
-	Låt $\omega$ vara $xyz$:s rotationsvektor, och därmed även kroppens rotationsvektor.
+	Låt $\omega$ vara $xyz$-systemets rotationsvektor, och därmed även kroppens rotationsvektor.
 	
 	Detta ger oss vridmomentekvationen:
 	
@@ -133,7 +133,7 @@
 		\end{cases}
 	\end{IEEEeqnarray*}
 	
-	Vi betraktar fallet då $\mathbf{M} = \mathbf{0}$ och $\Omega$ konstant relativt $\hat{x}\hat{y}\hat{z}$-systemet:
+	Vi betraktar fallet då $\mathbf{M} = \mathbf{0}$ och $\boldsymbol{\Omega}$ konstant relativt $\hat{x}\hat{y}\hat{z}$-systemet:
 	
 	\begin{equation*}
 		\begin{cases}
@@ -319,15 +319,9 @@
 		Systemet är alltså stabilt då $|\omega_x| \gg |\omega_y| \land |\omega_x| > |\omega_z|$.
 		Analogt gäller för $|\omega_z| > |\omega_x|$.
 		
-		Om vi däremot inte har större
-		vinkelhastigheter i $x$- och $z$-led, med större rotation i $y$-led, då kommer $\dot{\omega_y}$ inte bli negativt
-		nog och rotationsrörelsen ändrar sig markant. Problemet blir instabilt: små
-		störrningar i $x$ och $z$-led ger stora skillnader. Detta överänsstämmer väl med
-		det vi observerade i vårt experiment.
-		
-		Ändring i hastighetsriktning kommer från att att kroppen spinner runt och därför
-		ändrar orientering; en observatör utanför koordinatsystemet skulle inte märka
-		några plötsliga ändringar i rotationshastighetens riktning.
+		Om däremot $y$ är den dominerande rotationsaxeln och $\omega_x \ne 0 \land \omega_z \ne 0$
+		så resulterar det i att rotationen kommer att förflytta sig mellan $y$ till $x$ och $z$
+		för att sedan komma tillbaka till $y$. Dvs. initial rotation kring $y$ är instabil.
 		
 		\begin{equation}
 			\dot{\boldsymbol{\omega}}^{\prime} = \begin{bmatrix}
