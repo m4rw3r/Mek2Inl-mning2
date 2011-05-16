@@ -64,34 +64,23 @@
 	I ett kroppsfixt koordinatsystem, gäller som namnet antyder, att punkter på kroppen
 	har en fixt position i förhållande till koordinatsystemet. Då deras positionsvektorer
 	inte ändras kan man räkna ut integralerna ingående i tröghetsmatrisen utan något tidsberoende.
-	
-	För att få fram tröghetsmomentet över tid för en kropp i rörelse i ett icke kroppsfixt
-	koordinatsystem skulle kräva att vi vet hur samtliga punkter på kroppen rör sig över tid,
-	och varför skulle vi då behöva tröghetsmomentet?
-	Skulle kanske gå att lösa som en diff-ekvation från helvetet, kanske approximerbar som ett
-	system av diff-ekvationer om man betrakta diskreta punkter. men varför skulle man vilja gör
-	detta när vi kan använda kroppsfixa koordinatsystem?
 
 	\subsection{Delproblem b}
 	$M = \dot{L}$, och då vi valt att uttrycka $L$ i ett kroppsfixt koordinatsystem $xyz$ får vi
-	bidrag i $\dot{L}$ dels från L:s förändring i de kroppsfixa koordinataxlarna
+	bidrag i $\dot{L}$ dels från $\mathbf{L}$:s förändring i de kroppsfixa koordinataxlarna
 	$\hat{x},\hat{y},\hat{z}$ och dels från koordinataxlarnas förändring i det omgivande
-	koordinatsystemet (enligt produktregeln)
+	koordinatsystemet.
 	
-	Låt $\Omega$ vara $xyz$:s rotationsvektor (och därmed även kroppens rotationsvektor $\omega$,
-	ty kroppsfixt koordinatsystem).
-	
-	$\omega$ motsvarar också precessionsvektorn.
-	
+	Låt $\omega$ vara $xyz$:s rotationsvektor, och därmed även kroppens rotationsvektor.
 	
 	Detta ger oss vridmomentekvationen:
 	
 	\begin{equation*}
-		M = \dot{L} = \dot{L}_{\mathrm{rel}} + \omega \times L
+		M = \dot{L} = \dot{L}_{xyz} + \omega \times L
 	\end{equation*}
 	
 	
-	Betrakta nu vridmomentsekvationerna komponentvist:
+	Komponentvist:
 	\begin{equation}
 		\begin{cases}
 			M_x = \dot{L}_x + L_z \omega_y - L_y \omega_z \\
@@ -103,7 +92,7 @@
 	
 \section{Problem 2}
 	\subsection{Delproblem a}
-	Symmetriaxel-fixt koordinatsystem $\hat{x},\hat{y},\hat{z}$ med $I_{xx} = I_{yy} = I_0$ och $I_{zz} \ne I_0$:
+	Symmetriaxel-fixt koordinatsystem $\hat{x},\hat{y},\hat{z}$ med $I_{xx} = I_{yy} = I_0$ och $I_{zz} \neq I_0$:
 	
 	\begin{equation*}
 		I = \begin{bmatrix}
@@ -114,10 +103,10 @@
 	\end{equation*}
 	
 	Låt $\boldsymbol{\nu}$ vara kroppens rotation i det symmetri-axel-fixa koordinatsystemet,
-	$\boldsymbol{\omega}$ är kroppens rotation relativt det omgivande inertialsystemet samt $\mathbf{\Omega}$ är
+	$\boldsymbol{\omega}$ vara kroppens rotation relativt det omgivande inertialsystemet samt $\mathbf{\Omega}$ vara
 	$\hat{x}\hat{y}\hat{z}$-systemets rotation.
 	
-	Eftersom $\hat{x}\hat{y}\hat{z}$ är symmetriaxel-fixt så betyder det att $\nu_x = \nu_y = 0$ för att
+	Eftersom $\hat{x}\hat{y}\hat{z}$ är symmetriaxel-fixt så måste $\nu_x = \nu_y = 0$ för att
 	systemet skall fortsätta att vara symmetriaxel-fixt.
 	
 	\begin{IEEEeqnarray*}{rCl}
@@ -131,7 +120,7 @@
 		\end{cases}
 	\end{IEEEeqnarray*}
 	
-	Vi betraktar fallet då $\mathbf{M} = \mathbf{0}$:
+	Vi betraktar fallet då $\mathbf{M} = \mathbf{0}$ och $\Omega$ konstant relativt $\hat{x}\hat{y}\hat{z}$-systemet:
 	
 	\begin{equation*}
 		\begin{cases}
@@ -161,10 +150,10 @@
 	\end{equation}
 	\subsection{Delproblem b}
 	Då vi har kroppsfixt system utan yttre vridande moment bör precessionsvektorn
-	gå igenom kroppens masscentrum.  Då vi enligt delproblem a har ett värde för
-	precessionsvektorn i rotationsvektorns riktning enligt \eqref{IoejIz}, samt dess
-	riktning i förhållande till rotationvektorns riktning, så får vi precessionsvektorns
-	uttryckt i symmetriaxelfixt systemet $\hat{x}\hat{y}\hat{z}$:
+	gå igenom kroppens masscentrum.  Då vi har ett värde för precessionsvektorn i 
+        rotationsvektorns riktning enligt \eqref{IoejIz}, samt dess riktning i förhållande 
+        till rotationvektorns riktning, så får vi precessionsvektorns uttryckt i 
+        symmetriaxelfixta systemet $\hat{x}\hat{y}\hat{z}$:
 	
 	\begin{equation*}
 		\Omega_z = \frac{\nu_z I_z}{I_o-I_z}
@@ -177,13 +166,12 @@
 
 	Enligt förutsättningarna är det ett avstånd på 10 meter mellan rotation och
 	precessionsvektor vid jordytan, $b=10 \,\mathrm{m}$. Radien vid polerna är $R_p= 6356,7523 \,\mathrm{km}$,
-	radien vid ekvatorn: $R_e=6378,1370 \,\mathrm{km}$. För att få jordens tröghetsmoment slår vi
-	inte upp tabellvärden utan integrerar över en ellipsoid.
+	radien vid ekvatorn: $R_e=6378,1370 \,\mathrm{km}$. För att få jordens tröghetsmoment integrerar över en homogen ellipsoid.
 	Fås att $I_o = \frac{m}{5}(R_p^2+R_e^2), I_z = \frac{2m}{5}R_e^2$ vilket ger relativa
 	skillnaden: $\frac{I_o-I_z}{I_z} = -0,0033472$, samt att $\Omega \approx -299\nu$. Om
 	$\omega=\Omega+\nu = \frac{2\pi}{24 \,\mathrm{h}}$ ger detta att
 	$\nu \approx \frac{-\frac{2\pi}{298}}{24 \,\mathrm{h}}$, alltså spinner jorden ett cirka varv på 300
-	dagar i motsatt riktning till dygn-snurr. Precessionshastigheten blir då $\frac{-598\pi}{298 \cdot 86400 \,\mathrm{s}} = 7,2966 \cdot 10^{-5}$, eller $1,0034$ varv per dygn.
+	dagar i motsatt riktning till precessionen. Precessionshastigheten blir då $\frac{-598\pi}{298 \cdot 86400 \,\mathrm{s}} = 7,2966 \cdot 10^{-5}$, eller $1,0034$ varv per dygn.
 
 	\begin{figure}
 		\begin{center}
@@ -195,7 +183,7 @@
 
 	\subsection{Delproblem c}
 		För en godtycklig precessionsvektor $\boldsymbol{\Omega}= \Omega_x \hat{x} + \Omega_y \hat{y} + \Omega_z \hat{z}$
-		och för ett symmetriaxelfixt 
+		och för ett symmetriaxel-fixt 
 		koordinatsystem har vi endast spinn kring huvudsymmetriaxeln, $\boldsymbol{\nu}=\nu \hat{z}$.
 		Detta ger oss kroppens absoluta rotation: 
 		$\boldsymbol{\omega}=\Omega_x \hat{x} + \Omega_y \hat{y} + (\Omega_z + \nu )\hat{z}$, kroppens rörelsemängd moment: 
@@ -207,15 +195,14 @@
 		För att dra slutsatser om vilka som är fixta i ett inertialsystem så tar vi tidsderivatan av
 		vektorerna. Vi har enligt förutsättningen att $\mathbf{M} = \dot{\mathbf{L}} = \mathbf{0}$ ,
 		dvs $\mathbf{L}$ är fixt. Övriga vektorer är det inte, $\dot{\hat{z}}=\boldsymbol{\Omega} \times \hat{z}$,
-		vilket inte är noll i vårt fall. $\dot{\boldsymbol{\omega}} = \dot{\boldsymbol{\Omega}}+\dot{\boldsymbol{\nu}} =
-		0 + \boldsymbol{\Omega} \times \nu \hat{z}$, vilket inte är noll då föregående inte är noll.
-		Kan även resonera kring att de 3 alltid ligger i ett plan som är fixt i 
+		vilket inte är noll då precessionsaxeln avviker från $\hat{z}$. $\dot{\boldsymbol{\omega}} = \dot{\boldsymbol{\Omega}}+\dot{\boldsymbol{\nu}} =
+		0 + \boldsymbol{\Omega} \times \nu \hat{z}$, är inte noll av samma skäl.
+		Man kan även resonera kring att de 3 alltid ligger i ett plan som är fixt i 
 		ett symmetriaxelfixt system precesserande system, alltså inte utanför systemet.
 		
-		Sett innefrån ett system som roterar med $\boldsymbol{\omega}$ så blir $\hat{z}$ fixt, ty det enda som skilljer vårt nya system från 
-		vårt gamla är att vi nu har en axel i $\hat{z}$ riktning som roterar, men i övrigt sammanfaller den med gamla goda $\hat{z}$ som alltså alltid pekar upp ur samma punkt.
-		Då $\mathbf{L}$ och $\boldsymbol{\omega}$ alltid låg i ett och samma plan spänt av $\hat{z}$ och $\hat{y}$ med komponenter i $\hat{y}$-led, så kan de inte hänga 
-		med i vårt kroppsfixta system, ty vi har inte längre en alltid axel i $\hat{y}$ led.
+		Sett innefrån ett system som roterar med $\boldsymbol{\omega}$ så blir $\hat{z}$ fixt, ty det enda som skilljer vårt kroppsfixta system från 
+		vårt symmetriaxelfixta är att vi nu har en axel i $\hat{z}$ riktning som roterar, men i övrigt sammanfaller den med $\hat{z}$ som alltså alltid pekar upp ur samma punkt.
+		Då $\mathbf{L}$ och $\boldsymbol{\omega}$ alltid låg i ett och samma plan spänt av $\hat{z}$ och $\hat{y}$ med komponenter i $\hat{y}$-led, så kan de inte vara fixta i vårt kroppsfixta system som bara ibland har en axel i $\hat{y}$ led.
 		
 
 	
